@@ -5,13 +5,13 @@
 
 //Select size input
 var gridHeight = document.getElementById("inputHeight");
-gridHeight.addEventListener("change paste keyup", function(e) {});
+gridHeight.addEventListener("change paste keyup", function (e) {});
 
 var gridWidth = document.getElementById("inputWeight");
-gridWidth.addEventListener("change paste keyup", function(e) {});
+gridWidth.addEventListener("change paste keyup", function (e) {});
 
 var submit = document.querySelector("input#submit");
-submit.addEventListener("click", function() {
+submit.addEventListener("click", function () {
   gridHeightValue = gridHeight.value;
   gridWidthValue = gridWidth.value;
   colorValue = color.value;
@@ -23,7 +23,7 @@ submit.addEventListener("click", function() {
 
 //select color input
 var color = document.getElementById("colorPicker");
-color.addEventListener("change", function() {});
+color.addEventListener("change", function () {});
 
 //make grid
 function makeGrid() {
@@ -40,9 +40,11 @@ function makeGrid() {
   }
 }
 
-function clearGrid() {
-  var reset = document.querySelector("#reset");
-  reset.addEventListener("click", function() {
-    $("td").remove();
-  });
-}
+// clear grid
+var reset = document.querySelector("#reset");
+$('#reset').on('click', function (event) {
+  event.preventDefault();
+  alert("aa");
+  $('tr').remove();
+  return false;
+});
