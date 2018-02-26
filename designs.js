@@ -43,19 +43,10 @@ function makeGrid() {
 
 
 // button to clear grid
-if (gridHeight.value > 0 || gridWidth > 0) {
-  var reset = document.querySelector("#reset");
-  $('input').on('change', function (event) {
-    gridHeight.value = 0;
-    gridWidth.value = 0;
-    event.preventDefault();
-
-    //dynamically remove table
-    $('tr').remove();
-    return false;
-  });
-
-}
+$('#reset').on('click', function () {
+  event.preventDefault()
+  $('tr').remove();
+});
 
 
 //make table clickable and add color
